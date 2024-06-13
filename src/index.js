@@ -36,8 +36,8 @@ app.use('/api/enquiry', enquiryRouter)
 app.use('/api/orders',paymentRouter)
 app.use('/api/upload', uploadRouter)
 
-app.use(notFound)
-app.use(errorHandler)
+// app.use(notFound)
+// app.use(errorHandler)
 
 app.get("/", (req, res) => {
     res.sendFile(path.resolve("./client/checkout.html"));
