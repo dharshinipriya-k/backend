@@ -25,7 +25,6 @@ app.use(express.json())
 dbConnect()
 app.use(cookieParser())
 
-
 app.use('/api/user',authRouter)
 app.use('/api/product',productRouter)
 app.use('/api/blogs',blogRouter)
@@ -35,12 +34,5 @@ app.use('/api/coupon',couponRouter)
 app.use('/api/enquiry', enquiryRouter)
 app.use('/api/orders',paymentRouter)
 app.use('/api/upload', uploadRouter)
-
-// app.use(notFound)
-// app.use(errorHandler)
-
-app.get("/", (req, res) => {
-    res.sendFile(path.resolve("./client/checkout.html"));
-  });
 
 app.listen(PORT,()=>console.log(`App listening to port ${PORT}`))

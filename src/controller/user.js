@@ -3,7 +3,6 @@ const Cart = require('../models/cartModel.js')
 const Product = require('../models/ProductModel.js')
 const Order = require('../models/orderModel.js')
 const Coupon = require('../models/couponModel.js')
-
 const asyncHandler = require('express-async-handler')
 const jsonwebtoken = require('jsonwebtoken')
 const jwt = require('../config/jwtToken.js')
@@ -120,7 +119,7 @@ const loginAdmin = asyncHandler(
         try {
              // first check if Admin is found
             const findAdmin = await User.findOne({email})
-            // console.log(findUser);
+            
             if(findAdmin.role !== 'admin') throw new Error('Not authorised!')
             if(findAdmin)
             {
